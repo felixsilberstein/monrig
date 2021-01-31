@@ -4,9 +4,11 @@
 <title>Rigs Monitor</title>
 <script type="text/javascript">
     const userAction = async () => {
-        const response = await fetch('http://cryptonote.social/pool/stats/xmr/mrburger');
+        const {response} = await fetch('http://cryptonote.social/pool/stats/xmr/mrburger');
+        if (response) {
         const myJson = await response.json(); //extract JSON from the http response
         document.querySelector("cryptonote.social .status").innerHTML = myJson;
+        }
         // do something with myJson
     }
 </script>
