@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rigs Monitor</title>
+<script type="text/javascript">
+    const userAction = async () => {
+        const response = await fetch('http://cryptonote.social/pool/stats/xmr/mrburger');
+        const myJson = await response.json(); //extract JSON from the http response
+        document.querySelector("cryptonote.social .status").innerHTML = myJson;
+        // do something with myJson
+    }
+</script>
+</head>
+<body onload="userAction();">
+
+<h1>Rigs Monitor</h1>
+<section id="cryptonote.social">
+    <h2>cryptonote.social</h2>
+    <div class="status"></div>
+</section>
+
+</body>
+</html>
